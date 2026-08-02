@@ -4,7 +4,7 @@ export const company = {
   phoneHref: "tel:+17865546809",
   email: "support@realconnectionlab.com",
   emailHref: "mailto:support@realconnectionlab.com",
-  address: "3917 Milo Dr, McKinney, TX 75071"
+  address: "McKinney, TX 75071",
 };
 
 export const apps = [
@@ -25,26 +25,26 @@ export const apps = [
     highlights: [
       "Live one-on-one fan calls",
       "Creator earning tools",
-      "Safety-first access controls"
+      "Safety-first access controls",
     ],
     links: [
       {
         label: "Join TestFlight",
         href: "https://testflight.apple.com/join/cQMDj8Qy",
-        kind: "testflight"
+        kind: "testflight",
       },
       {
         label: "App Store pending",
         href: null,
         kind: "appstore",
-        disabled: true
+        disabled: true,
       },
       {
         label: "Google Play pending",
         href: null,
         kind: "googleplay",
-        disabled: true
-      }
+        disabled: true,
+      },
     ],
     screenshots: [
       "/assets/fanline/screenShot1.PNG",
@@ -55,8 +55,8 @@ export const apps = [
       "/assets/fanline/screenShot6.PNG",
       "/assets/fanline/screenShot7.PNG",
       "/assets/fanline/screenShot8.PNG",
-      "/assets/fanline/screenShot9.PNG"
-    ]
+      "/assets/fanline/screenShot9.PNG",
+    ],
   },
   {
     id: "sober-motivation",
@@ -75,19 +75,19 @@ export const apps = [
     highlights: [
       "Sobriety tracker and reflections",
       "Bar and liquor store alerts",
-      "Sober buddies and live calls"
+      "Sober buddies and live calls",
     ],
     links: [
       {
         label: "App Store",
         href: "https://apps.apple.com/us/app/sober-motivation-quit-drinking/id6756150473",
-        kind: "appstore"
+        kind: "appstore",
       },
       {
         label: "Google Play",
         href: "https://play.google.com/store/apps/details?hl=en_US&id=com.sobermotivation.app",
-        kind: "googleplay"
-      }
+        kind: "googleplay",
+      },
     ],
     screenshots: [
       "/assets/soberMotivation/screenShot1.png",
@@ -99,8 +99,8 @@ export const apps = [
       "/assets/soberMotivation/screenShot7.png",
       "/assets/soberMotivation/screenShot8.png",
       "/assets/soberMotivation/screenShot9.png",
-      "/assets/soberMotivation/screenShot10.png"
-    ]
+      "/assets/soberMotivation/screenShot10.png",
+    ],
   },
   {
     id: "wine-dime",
@@ -119,20 +119,20 @@ export const apps = [
     highlights: [
       "Live video speed dates",
       "Interest-based chatrooms",
-      "Myxer rebrand coming soon"
+      "Myxer rebrand coming soon",
     ],
     links: [
       {
         label: "App Store",
         href: "https://apps.apple.com/us/app/wine-dime-video-speed-dating/id6450847978",
-        kind: "appstore"
+        kind: "appstore",
       },
       {
         label: "Google Play coming soon",
         href: null,
         kind: "googleplay",
-        disabled: true
-      }
+        disabled: true,
+      },
     ],
     screenshots: [
       "/assets/wine&dime/screenShot1.png",
@@ -143,7 +143,7 @@ export const apps = [
       "/assets/wine&dime/screenShot6.png",
       "/assets/wine&dime/screenShot7.png",
       "/assets/wine&dime/screenShot8.png",
-      "/assets/wine&dime/screenShot9.png"
-    ]
-  }
+      "/assets/wine&dime/screenShot9.png",
+    ],
+  },
 ];
