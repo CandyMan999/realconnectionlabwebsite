@@ -2,8 +2,8 @@ export const company = {
   name: "Real Connection Lab LLC",
   phone: "786-554-6809",
   phoneHref: "tel:+17865546809",
-  email: "support@realconnectionlab.com",
-  emailHref: "mailto:support@realconnectionlab.com",
+  email: "support@realconnectionlabllc.com",
+  emailHref: "mailto:support@realconnectionlabllc.com",
   address: "McKinney, TX 75071",
 };
 
