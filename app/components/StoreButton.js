@@ -1,4 +1,5 @@
 import { SiAppstore } from "react-icons/si";
+import { ShieldCheck } from "lucide-react";
 
 function GooglePlayIcon() {
   return (
@@ -57,6 +58,14 @@ function getBadgeContent(link) {
       Icon: TestFlightIcon,
       eyebrow: "Join the beta on",
       title: "TestFlight"
+    };
+  }
+
+  if (link.kind === "privacy") {
+    return {
+      Icon: ShieldCheck,
+      eyebrow: "Read the",
+      title: "Privacy Policy"
     };
   }
 

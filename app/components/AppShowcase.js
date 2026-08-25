@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { PlayCircle } from "lucide-react";
+import AppLogo from "./AppLogo";
+import PreviewVideo from "./PreviewVideo";
 import ScreenshotCarousel from "./ScreenshotCarousel";
 import StoreButton from "./StoreButton";
 
@@ -16,12 +18,11 @@ export default function AppShowcase({ app, index }) {
       <div className="section-inner app-layout">
         <div className="app-copy">
           <div className="app-title-row">
-            <Image
+            <AppLogo
+              app={app}
               className="app-title-logo"
-              src={app.logo}
-              alt={`${app.name} logo`}
-              width={72}
-              height={72}
+              decorative={false}
+              size={72}
             />
             <div>
               <h2>{app.name}</h2>
@@ -46,7 +47,9 @@ export default function AppShowcase({ app, index }) {
         </div>
 
         <div className="media-column">
-          {app.video ? (
+          {app.video && app.posterPlayOverlay ? (
+            <PreviewVideo app={app} />
+          ) : app.video ? (
             <div className="video-frame">
               <video
                 controls
@@ -74,7 +77,7 @@ export default function AppShowcase({ app, index }) {
               />
               <div className="video-caption">
                 <PlayCircle size={18} aria-hidden="true" />
-                <span>Preview assets coming soon</span>
+                <span>{app.previewLabel ?? "Preview assets coming soon"}</span>
               </div>
             </div>
           )}

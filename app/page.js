@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowDown, Mail, MapPin, Phone, Sparkles } from "lucide-react";
 import AppShowcase from "./components/AppShowcase";
+import AppLogo from "./components/AppLogo";
 import { apps, company } from "./data/apps";
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
         </a>
         <nav>
           {apps.map((app) => (
-            <a href={`#${app.id}`} key={app.id}>
+            <a href={app.navHref ?? `#${app.id}`} key={app.id}>
               {app.name}
             </a>
           ))}
@@ -44,7 +45,7 @@ export default function Home() {
           />
           <Image
             className="hero-shot hero-shot-three"
-            src="/assets/wine&dime/screenShot1.png"
+            src="/assets/myxer/myxer1.png"
             alt=""
             width={310}
             height={674}
@@ -84,8 +85,8 @@ export default function Home() {
                 key={app.id}
                 style={{ "--accent": app.accent, "--accent-alt": app.accentAlt }}
               >
-                <Image src={app.logo} alt="" width={40} height={40} />
-                <span>
+                <AppLogo app={app} className="jump-logo" />
+                <span className="jump-copy">
                   <strong>{app.name}</strong>
                   <small>{app.eyebrow}</small>
                 </span>

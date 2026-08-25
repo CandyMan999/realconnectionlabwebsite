@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: "Real Connection Lab LLC",
     description:
-      "Explore Fanline, Sober Motivation, and Wine&Dime from Real Connection Lab LLC.",
+      "Explore Fanline, Sober Motivation, and Myxer from Real Connection Lab LLC.",
     type: "website"
   }
 };
