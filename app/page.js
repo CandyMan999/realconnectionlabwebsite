@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowDown, Mail, MapPin, Phone, Sparkles } from "lucide-react";
 import AppShowcase from "./components/AppShowcase";
 import AppLogo from "./components/AppLogo";
+import BrandLogo from "./components/BrandLogo";
 import { apps, company } from "./data/apps";
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
     <main>
       <header className="site-header" aria-label="Primary navigation">
         <a className="brand-mark" href="#top" aria-label="Real Connection Lab home">
-          <span>RC</span>
+          <BrandLogo />
           <strong>{company.name}</strong>
         </a>
         <nav>

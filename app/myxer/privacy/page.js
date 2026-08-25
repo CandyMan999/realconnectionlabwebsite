@@ -1,4 +1,5 @@
 import { Mail, ShieldCheck } from "lucide-react";
+import BrandLogo from "../../components/BrandLogo";
 import { company } from "../../data/apps";
 
 export const metadata = {
@@ -12,7 +13,7 @@ export default function MyxerPrivacyPolicy() {
     <main className="legal-page">
       <header className="legal-header">
         <a className="brand-mark" href="/" aria-label="Real Connection Lab home">
-          <span>RC</span>
+          <BrandLogo />
           <strong>{company.name}</strong>
         </a>
         <nav aria-label="Privacy page navigation">
