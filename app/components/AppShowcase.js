@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { PlayCircle } from "lucide-react";
+import { ArrowRight, PlayCircle } from "lucide-react";
 import AppLogo from "./AppLogo";
 import PreviewVideo from "./PreviewVideo";
 import ScreenshotCarousel from "./ScreenshotCarousel";
@@ -44,6 +44,10 @@ export default function AppShowcase({ app, index }) {
               <StoreButton link={link} key={link.label} />
             ))}
           </div>
+          <a className="detail-link" href={app.path}>
+            Learn more about {app.name}
+            <ArrowRight size={18} aria-hidden="true" />
+          </a>
         </div>
 
         <div className="media-column">

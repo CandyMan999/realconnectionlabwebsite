@@ -3,9 +3,20 @@ import BrandLogo from "../../components/BrandLogo";
 import { company } from "../../data/apps";
 
 export const metadata = {
-  title: "Myxer Privacy Policy | Real Connection Lab LLC",
+  title: "Myxer Privacy Policy",
   description:
     "Privacy Policy for Myxer, the live video speed dating app from Real Connection Lab LLC.",
+  alternates: {
+    canonical: "/myxer/privacy",
+  },
+  openGraph: {
+    title: "Myxer Privacy Policy | Real Connection Lab LLC",
+    description:
+      "Privacy Policy for Myxer, the live video speed dating app from Real Connection Lab LLC.",
+    url: "/myxer/privacy",
+    siteName: company.name,
+    type: "website",
+  },
 };
 
 export default function MyxerPrivacyPolicy() {

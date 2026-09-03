@@ -4,10 +4,17 @@ import AppShowcase from "./components/AppShowcase";
 import AppLogo from "./components/AppLogo";
 import BrandLogo from "./components/BrandLogo";
 import { apps, company } from "./data/apps";
+import { buildHomepageJsonLd, jsonLdScript } from "./lib/seo";
 
 export default function Home() {
+  const homepageJsonLd = buildHomepageJsonLd();
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(homepageJsonLd)}
+      />
       <header className="site-header" aria-label="Primary navigation">
         <a className="brand-mark" href="#top" aria-label="Real Connection Lab home">
           <BrandLogo />
@@ -15,7 +22,7 @@ export default function Home() {
         </a>
         <nav>
           {apps.map((app) => (
-            <a href={app.navHref ?? `#${app.id}`} key={app.id}>
+            <a href={app.path} key={app.id}>
               {app.name}
             </a>
           ))}
@@ -82,7 +89,7 @@ export default function Home() {
             {apps.map((app) => (
               <a
                 className={`jump-link jump-link-${app.theme}`}
-                href={`#${app.id}`}
+                href={app.path}
                 key={app.id}
                 style={{ "--accent": app.accent, "--accent-alt": app.accentAlt }}
               >
@@ -113,7 +120,8 @@ export default function Home() {
             <p>
               The company manages product design, mobile app development, app store
               distribution, user support, privacy documentation, safety workflows,
-              and ongoing maintenance for the apps represented on this site.
+              SEO-ready app pages, and ongoing maintenance for the apps represented
+              on this site.
             </p>
             <div className="company-points" aria-label="Company capabilities">
               <span>Mobile app development</span>

@@ -1,32 +1,81 @@
 export const company = {
   name: "Real Connection Lab LLC",
+  url: "https://realconnectionlabllc.com",
   phone: "786-554-6809",
   phoneHref: "tel:+17865546809",
   email: "support@realconnectionlabllc.com",
   emailHref: "mailto:support@realconnectionlabllc.com",
   address: "McKinney, TX 75071",
+  addressLocality: "McKinney",
+  addressRegion: "TX",
+  postalCode: "75071",
+  country: "US",
 };
 
 export const apps = [
   {
     id: "fanline",
-    name: "Fanline",
-    eyebrow: "Creator access platform",
-    status: "TestFlight open - Android available - App Store approval pending",
-    headline: "Live calls between creators and their biggest fans.",
+    path: "/fanline",
+    name: "FanLine",
+    storeName: "FanLine",
+    eyebrow: "Creator calls and paid messages",
+    status: "iOS beta open - Android link available - App Store approval pending",
+    headline: "Video call, message, or book creators and experts.",
     description:
-      "Fanline is built for premium video calls, safer fan access, and creator monetization without losing the personal spark that makes a community feel alive.",
+      "FanLine helps fans, clients, and followers reach creators directly through paid video calls, private messages, scheduled bookings, creator profiles, secure payments, and transparent access controls.",
+    longDescription:
+      "Built for influencers, coaches, experts, and creator-led businesses, FanLine gives people a direct way to request a live call, send a paid message, or book a conversation for later. Creators can show availability, set rates, manage profiles, and earn from high-intent conversations without losing control of their time.",
+    disclaimer:
+      "FanLine creators are independent users. Information shared through FanLine is not a substitute for medical, legal, financial, or other professional advice.",
     logo: "/assets/fanline/fanlineLogo.png",
     poster: "/assets/fanline/screenShot1.PNG",
     video: null,
     accent: "#00ddeb",
     accentAlt: "#ff174f",
     theme: "fanline",
+    website: "https://joinfanline.com/",
+    schemaCategory: "SocialNetworkingApplication",
+    platforms: ["iOS", "Android"],
     highlights: [
-      "Live one-on-one fan calls",
-      "Creator earning tools",
-      "Safety-first access controls",
+      "Paid one-on-one video calls",
+      "Private paid messages and scheduled bookings",
+      "Creator profiles with rates, availability, and categories",
+      "Secure payments with no charge unless a call connects or a message is unlocked",
+      "Trust, reporting, and verification workflows for safer access",
     ],
+    detailSections: [
+      {
+        title: "Direct creator access",
+        body: "Fans can browse creators by name, category, price, or availability, then start a call, send a message, or book a time that fits both sides.",
+      },
+      {
+        title: "Creator monetization",
+        body: "Creators can set call and message rates, show public profiles, manage availability, and turn high-intent followers into paid conversations.",
+      },
+      {
+        title: "Clear payments and trust",
+        body: "FanLine is built around transparent pricing, secure payments, creator review workflows, reporting tools, and access controls for paid one-on-one conversations.",
+      },
+    ],
+    seo: {
+      title: "FanLine Creator Calls, Paid Messages and Bookings",
+      description:
+        "FanLine by Real Connection Lab lets fans video call, message, or book creators, coaches, experts, and influencers with secure payments and clear creator profiles.",
+      keywords: [
+        "FanLine",
+        "creator calls",
+        "paid video calls",
+        "paid messages",
+        "creator booking app",
+        "fan access app",
+        "creator monetization",
+        "Real Connection Lab",
+      ],
+    },
+    ogImage: "/assets/fanline/screenShot1.PNG",
+    lastModified: "2026-09-03",
+    sitemapPriority: 0.82,
+    sitemapChangeFrequency: "weekly",
     links: [
       {
         label: "Join TestFlight",
@@ -59,23 +108,68 @@ export const apps = [
   },
   {
     id: "sober-motivation",
+    path: "/sober-motivation",
     name: "Sober Motivation",
+    storeName: "Sober Motivation Quit Drinking",
     eyebrow: "Recovery support app",
     status: "Available on iOS and Android",
-    headline: "Real accountability for people quitting drinking.",
+    headline:
+      "Quit drinking with sober tracking, accountability, and timely support.",
     description:
-      "Sober Motivation combines sober tracking, daily check-ins, community support, bar and liquor store alerts, and video calls with sober buddies when support matters most.",
+      "Sober Motivation is a privacy-first quit drinking and sobriety tracker for adults who want accountability in real life: sober day counting, daily check-ins, journal prompts, relapse insights, bar and liquor store alerts, sober buddies, recovery chatrooms, and live video calls.",
+    longDescription:
+      "Sober Motivation goes beyond a simple sober day counter by helping people notice triggers, check in daily, journal honestly, celebrate milestones, and reach trusted support before high-risk moments become setbacks. Optional bar and liquor store alerts, sober buddy alerts, video calls, chatrooms, and privacy protections make the app useful when support matters most.",
+    disclaimer:
+      "Sober Motivation is not a medical device, emergency service, or replacement for professional treatment. If you are experiencing a medical emergency or severe withdrawal symptoms, call emergency services or seek professional medical care.",
     logo: "/assets/soberMotivation/soberMotivationLogo.png",
     poster: "/assets/soberMotivation/screenShot1.png",
     video: "/assets/soberMotivation/SoberMotivationPreview.mp4",
     accent: "#ffb000",
     accentAlt: "#20c8e8",
     theme: "sober",
+    schemaCategory: "HealthApplication",
+    platforms: ["iOS", "Android"],
     highlights: [
-      "Sobriety tracker and reflections",
-      "Bar and liquor store alerts",
-      "Sober buddies and live calls",
+      "Sobriety tracker with sober day counter, milestones, streaks, and relapse notes",
+      "Location-based bar and liquor store alerts for high-risk moments",
+      "Sober buddies, sponsor-style accountability, and live in-app video calls",
+      "Daily check-ins, private journaling, relapse insights, and recovery reflections",
+      "Recovery chatrooms, video milestones, privacy protections, reporting, and moderation tools",
     ],
+    detailSections: [
+      {
+        title: "Sobriety tracking that goes deeper",
+        body: "Track sober days, streaks, milestones, mood, cravings, triggers, wins, relapse notes, reflections, and the patterns that shape real recovery.",
+      },
+      {
+        title: "Support in high-risk moments",
+        body: "Optional bar and liquor store alerts can create a pause when awareness matters, while sober buddies can check in, message, or video call.",
+      },
+      {
+        title: "Private recovery community",
+        body: "Chatrooms, video posts, milestone celebrations, screenshot blocking where supported, moderation, and reporting tools help people share without turning recovery into comparison.",
+      },
+    ],
+    seo: {
+      title: "Sober Motivation Quit Drinking App and Sobriety Tracker",
+      description:
+        "Sober Motivation helps adults quit drinking with a sober day counter, bar and liquor store alerts, sober buddies, daily check-ins, journaling, chatrooms, and live video calls.",
+      keywords: [
+        "Sober Motivation",
+        "quit drinking app",
+        "sobriety tracker",
+        "sober day counter",
+        "bar alerts",
+        "liquor store alerts",
+        "sober buddies",
+        "recovery chatrooms",
+        "alcohol recovery app",
+      ],
+    },
+    ogImage: "/assets/soberMotivation/screenShot1.png",
+    lastModified: "2026-09-03",
+    sitemapPriority: 0.9,
+    sitemapChangeFrequency: "weekly",
     links: [
       {
         label: "App Store",
@@ -103,12 +197,18 @@ export const apps = [
   },
   {
     id: "myxer",
+    path: "/myxer",
     name: "Myxer",
+    storeName: "Myxer: Video Speed Dating",
     eyebrow: "Live video speed dating",
     status: "iOS live - Android coming soon",
-    headline: "Meet real people faster.",
+    headline: "Video speed dating for real face-to-face chemistry.",
     description:
-      "Myxer helps singles skip fake chats and endless swiping with live video speed dating, video-first messaging, chatrooms, and map-based discovery for real-time chemistry.",
+      "Myxer helps singles move past swipe fatigue with short live video dates, video-first messaging, interest chatrooms, travel mode, interactive map discovery, and safety tools designed to reduce bots, scams, and location exposure.",
+    longDescription:
+      "Myxer is built for singles who would rather meet face-to-face than spend days in text threads. Live speed dating, video-first messaging, local and global discovery, interest chatrooms, travel mode, and privacy-minded location tools help people find chemistry faster while keeping the experience focused on real users.",
+    disclaimer:
+      "Myxer is intended for adults. Users should follow in-app safety guidance and use good judgment when meeting or sharing personal information.",
     logo: "/assets/myxer/myxerLogo.png",
     poster: "/assets/myxer/myxer1.png",
     video: "/assets/myxer/myxerPreview.mp4",
@@ -117,15 +217,52 @@ export const apps = [
     accent: "#6df0cf",
     accentAlt: "#d8aa4c",
     theme: "myxer",
+    schemaCategory: "LifestyleApplication",
+    platforms: ["iOS"],
     highlights: [
-      "Short live video speed dates",
-      "Video-first messaging and interest chatrooms",
-      "Local and global discovery with privacy-minded location tools",
+      "Short live video speed dates that show chemistry quickly",
+      "Video-first messaging for more authentic conversations",
+      "Interest chatrooms for singles who want shared context before matching",
+      "Interactive map discovery, travel mode, and local or global browsing",
+      "Safety tools built to reduce bots, scammers, inappropriate content, and exact-location exposure",
     ],
+    detailSections: [
+      {
+        title: "Meet through live video",
+        body: "Short video speed dates help singles find out whether there is real chemistry before investing days in a text conversation.",
+      },
+      {
+        title: "Discover nearby or anywhere",
+        body: "Map discovery, travel mode, and local or global browsing make it easier to meet people in your area or explore other regions.",
+      },
+      {
+        title: "Video-first safety signals",
+        body: "Video messaging, live interactions, AI filtering, privacy-minded location offsets, and anti-scam tooling help create a more real dating experience.",
+      },
+    ],
+    seo: {
+      title: "Myxer Video Speed Dating App for Singles",
+      description:
+        "Myxer is a video speed dating app with live dates, video-first messaging, chatrooms, travel mode, map discovery, and safety tools for real singles.",
+      keywords: [
+        "Myxer",
+        "video speed dating",
+        "live dating app",
+        "video dating app",
+        "dating chatrooms",
+        "map dating app",
+        "singles app",
+        "Real Connection Lab",
+      ],
+    },
+    ogImage: "/assets/myxer/myxer1.png",
+    lastModified: "2026-09-03",
+    sitemapPriority: 0.88,
+    sitemapChangeFrequency: "weekly",
     links: [
       {
         label: "App Store",
-        href: "https://apps.apple.com/us/app/wine-dime-video-speed-dating/id6450847978",
+        href: "https://apps.apple.com/us/app/myxer-video-speed-dating/id6450847978",
         kind: "appstore",
       },
       {
@@ -140,7 +277,6 @@ export const apps = [
         disabled: true,
       },
     ],
-    navHref: "https://realconnectionlabllc.com/#myxer",
     screenshots: [
       "/assets/myxer/myxer1.png",
       "/assets/myxer/myxer2.png",
