@@ -12,7 +12,7 @@ export const apps = [
     id: "fanline",
     name: "Fanline",
     eyebrow: "Creator access platform",
-    status: "TestFlight open - App Store approval pending",
+    status: "TestFlight open - Android available - App Store approval pending",
     headline: "Live calls between creators and their biggest fans.",
     description:
       "Fanline is built for premium video calls, safer fan access, and creator monetization without losing the personal spark that makes a community feel alive.",
@@ -40,10 +40,9 @@ export const apps = [
         disabled: true,
       },
       {
-        label: "Google Play pending",
-        href: null,
+        label: "Google Play",
+        href: "https://play.google.com/store/apps/details?id=com.jalewis1221.fanline",
         kind: "googleplay",
-        disabled: true,
       },
     ],
     screenshots: [
