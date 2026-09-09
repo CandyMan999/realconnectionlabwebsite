@@ -2,7 +2,6 @@ import Image from "next/image";
 import { ArrowDown, Mail, MapPin, Phone, Sparkles } from "lucide-react";
 import AppShowcase from "./components/AppShowcase";
 import AppLogo from "./components/AppLogo";
-import BrandLogo from "./components/BrandLogo";
 import { apps, company } from "./data/apps";
 import { buildHomepageJsonLd, jsonLdScript } from "./lib/seo";
 
@@ -15,29 +14,11 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScript(homepageJsonLd)}
       />
-      <header className="site-header" aria-label="Primary navigation">
-        <a className="brand-mark" href="#top" aria-label="Real Connection Lab home">
-          <BrandLogo />
-          <strong>{company.name}</strong>
-        </a>
-        <nav>
-          {apps.map((app) => (
-            <a href={app.path} key={app.id}>
-              {app.name}
-            </a>
-          ))}
-        </nav>
-        <a className="header-phone" href={company.phoneHref}>
-          <Phone size={17} aria-hidden="true" />
-          {company.phone}
-        </a>
-      </header>
-
       <section className="hero" id="top">
         <div className="hero-visual" aria-hidden="true">
           <Image
             className="hero-shot hero-shot-one"
-            src="/assets/fanline/screenShot1.PNG"
+            src="/assets/fanline/appStoreFront/app1.png"
             alt=""
             width={310}
             height={674}
@@ -45,7 +26,7 @@ export default function Home() {
           />
           <Image
             className="hero-shot hero-shot-two"
-            src="/assets/soberMotivation/screenShot1.png"
+            src="/assets/soberMotivation/appStoreFront/app1.png"
             alt=""
             width={310}
             height={674}

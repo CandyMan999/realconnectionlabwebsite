@@ -1,0 +1,233 @@
+.dialog {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background: transparent;
+  color: #fff;
+  color-scheme: dark;
+}
+
+.dialog::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.94);
+}
+
+.viewport,
+.dragSurface,
+.track {
+  width: 100%;
+  height: 100%;
+}
+
+.viewport {
+  position: relative;
+  overflow: hidden;
+  touch-action: pan-y pinch-zoom;
+}
+
+.dragSurface {
+  cursor: grab;
+  touch-action: pan-y pinch-zoom;
+}
+
+.dragSurface:active {
+  cursor: grabbing;
+}
+
+.track {
+  display: flex;
+}
+
+.slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: contain;
+  object-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.control {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  background: rgba(9, 13, 26, 0.76);
+  color: #fff;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  transition: background 180ms ease;
+}
+
+.control:focus-visible,
+.dot:focus-visible,
+.activeDot:focus-visible {
+  outline: 3px solid #25f4ee;
+  outline-offset: 3px;
+}
+
+.close {
+  top: max(24px, env(safe-area-inset-top));
+  right: max(24px, env(safe-area-inset-right));
+  width: 44px;
+  height: 44px;
+}
+
+.arrow {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.previous {
+  left: max(24px, env(safe-area-inset-left));
+}
+
+.next {
+  right: max(24px, env(safe-area-inset-right));
+}
+
+.dots {
+  position: absolute;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  left: 50%;
+  z-index: 3;
+  display: flex;
+  width: max-content;
+  max-width: calc(100% - 32px - env(safe-area-inset-left) - env(safe-area-inset-right));
+  padding: 5px;
+  overflow-x: auto;
+  border-radius: 999px;
+  background: rgba(9, 13, 26, 0.65);
+  scrollbar-width: none;
+  transform: translateX(-50%);
+}
+
+.dots::-webkit-scrollbar {
+  display: none;
+}
+
+.dot,
+.activeDot {
+  display: grid;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.dot::after,
+.activeDot::after {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(37, 244, 238, 0.55);
+  content: "";
+  transition: background 180ms ease, width 180ms ease;
+}
+
+.activeDot::after {
+  width: 26px;
+  background: #ff2d69;
+}
+
+.status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (hover: hover) {
+  .control:hover {
+    background: rgba(255, 45, 105, 0.4);
+  }
+
+  .dot:hover::after {
+    background: #25f4ee;
+  }
+}
+
+@media (max-width: 640px) {
+  .viewport {
+    position: absolute;
+    top: calc(max(12px, env(safe-area-inset-top)) + 52px);
+    bottom: calc(max(8px, env(safe-area-inset-bottom)) + 60px);
+    height: auto;
+  }
+
+  .close {
+    top: max(12px, env(safe-area-inset-top));
+    right: max(12px, env(safe-area-inset-right));
+  }
+
+  .arrow {
+    top: auto;
+    bottom: calc(max(8px, env(safe-area-inset-bottom)) + 2px);
+    width: 44px;
+    height: 44px;
+    transform: none;
+  }
+
+  .previous {
+    left: max(8px, env(safe-area-inset-left));
+  }
+
+  .next {
+    right: max(8px, env(safe-area-inset-right));
+  }
+
+  .dots {
+    bottom: max(8px, env(safe-area-inset-bottom));
+    max-width: calc(100% - 128px - env(safe-area-inset-left) - env(safe-area-inset-right));
+    padding: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .control,
+  .dot::after,
+  .activeDot::after {
+    transition: none;
+  }
+}

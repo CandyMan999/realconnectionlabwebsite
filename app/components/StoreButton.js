@@ -61,14 +61,6 @@ function getBadgeContent(link) {
     };
   }
 
-  if (link.kind === "privacy") {
-    return {
-      Icon: ShieldCheck,
-      eyebrow: "Read the",
-      title: "Privacy Policy"
-    };
-  }
-
   return {
     Icon: TestFlightIcon,
     eyebrow: "Open",
@@ -77,6 +69,36 @@ function getBadgeContent(link) {
 }
 
 export default function StoreButton({ link }) {
+  if (link.kind === "privacy") {
+    const content = (
+      <>
+        <ShieldCheck size={16} aria-hidden="true" />
+        <span>Privacy Policy</span>
+      </>
+    );
+
+    if (link.disabled) {
+      return (
+        <span className="privacy-badge" aria-disabled="true" title="Privacy Policy">
+          {content}
+        </span>
+      );
+    }
+
+    return (
+      <a
+        className="privacy-badge"
+        href={link.href}
+        target="_blank"
+        rel="noreferrer"
+        title="Privacy Policy"
+        aria-label={`${link.label} opens in a new tab`}
+      >
+        {content}
+      </a>
+    );
+  }
+
   const { Icon, eyebrow, title } = getBadgeContent(link);
   const className = [
     "store-button",

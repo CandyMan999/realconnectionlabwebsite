@@ -6,6 +6,7 @@
   --white: #ffffff;
   --line: rgba(17, 19, 24, 0.12);
   --shadow: 0 18px 48px rgba(17, 19, 24, 0.16);
+  --site-nav-height: 82px;
 }
 
 * {
@@ -55,35 +56,16 @@ video {
   margin: 0 auto;
 }
 
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  display: grid;
-  grid-template-columns: minmax(190px, 1fr) auto minmax(190px, 1fr);
-  align-items: center;
-  gap: 18px;
-  min-height: 66px;
-  padding: 10px clamp(18px, 3vw, 42px);
-  background: rgba(248, 249, 247, 0.86);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(18px);
+#top,
+#apps,
+#contact {
+  scroll-margin-top: calc(var(--site-nav-height) + 20px);
 }
 
-.brand-mark,
-.header-phone,
-.site-header nav,
 .primary-action,
 .secondary-action,
 .carousel-controls button {
   min-height: 40px;
-}
-
-.brand-mark {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  justify-self: start;
 }
 
 .brand-logo {
@@ -94,49 +76,6 @@ video {
   border-radius: 8px;
   background: #111318;
   object-fit: cover;
-}
-
-.brand-mark strong {
-  font-size: 0.92rem;
-}
-
-.site-header nav {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 4px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.74);
-}
-
-.site-header nav a {
-  border-radius: 999px;
-  padding: 8px 13px;
-  color: #3f4650;
-  font-size: 0.88rem;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.site-header nav a:hover {
-  background: #111318;
-  color: #ffffff;
-}
-
-.header-phone {
-  display: inline-flex;
-  align-items: center;
-  justify-self: end;
-  gap: 9px;
-  border: 1px solid rgba(17, 19, 24, 0.18);
-  border-radius: 999px;
-  padding: 0 14px;
-  font-size: 0.93rem;
-  background: #ffffff;
-  font-weight: 800;
-  white-space: nowrap;
 }
 
 .hero {
@@ -338,7 +277,7 @@ video {
   position: relative;
   overflow: hidden;
   padding: clamp(56px, 7vw, 92px) 0;
-  scroll-margin-top: 66px;
+  scroll-margin-top: calc(var(--site-nav-height) + 20px);
 }
 
 .company-section {
@@ -542,11 +481,68 @@ video {
   content: "";
 }
 
-.store-row {
+.store-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.store-downloads {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 24px;
+  max-width: 100%;
+}
+
+.store-privacy {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.privacy-badge {
+  position: relative;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 12px;
+  color: inherit;
+  font-size: 0.76rem;
+  font-weight: 650;
+  white-space: nowrap;
+  opacity: 0.78;
+}
+
+.privacy-badge::before {
+  position: absolute;
+  inset: 6px 0;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  opacity: 0.28;
+  pointer-events: none;
+  content: "";
+}
+
+.privacy-badge:hover::before {
+  opacity: 0.7;
+}
+
+.privacy-badge:hover {
+  opacity: 1;
+}
+
+.privacy-badge:focus-visible {
+  outline: 2px solid var(--accent-alt);
+  outline-offset: 2px;
+  border-radius: 999px;
+}
+
+.privacy-badge svg {
+  flex: 0 0 auto;
 }
 
 .store-button {
@@ -603,11 +599,6 @@ video {
 }
 
 .store-button-googleplay {
-  background: #ffffff;
-  color: #111318;
-}
-
-.store-button-privacy {
   background: #ffffff;
   color: #111318;
 }
@@ -712,10 +703,11 @@ video {
 .app-detail-title h1 {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(2.4rem, 6vw, 5.2rem);
-  line-height: 0.96;
+  font-size: clamp(2.15rem, 4vw, 3.5rem);
+  line-height: 1.06;
   letter-spacing: 0;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .app-detail-title p {
@@ -744,7 +736,6 @@ video {
 }
 
 .app-detail-hero .store-button-googleplay,
-.app-detail-hero .store-button-privacy,
 .app-detail-hero .store-button-disabled {
   border-color: rgba(255, 255, 255, 0.52);
 }
@@ -964,6 +955,73 @@ video {
   height: auto;
 }
 
+.app-layout-with-promo {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 48px);
+}
+
+.app-promo-media {
+  width: 100%;
+  min-width: 0;
+}
+
+.app-promo-video {
+  width: fit-content;
+  max-width: 100%;
+  margin: 20px auto 0;
+}
+
+.app-promo-video summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 750;
+  cursor: pointer;
+  list-style: none;
+}
+
+.app-promo-video summary::-webkit-details-marker {
+  display: none;
+}
+
+.app-promo-video video {
+  width: min(100%, 310px);
+  max-height: 70svh;
+  margin: 18px auto 0;
+  border-radius: 20px;
+  background: #111318;
+}
+
+.screenshot-artwork {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.screenshot-preview-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.screenshot-artwork:focus-within {
+  outline: 3px solid var(--accent-alt);
+  outline-offset: 3px;
+}
+
+.screenshot-preview-button:focus-visible {
+  outline: none;
+}
+
 .contact-footer {
   padding: clamp(58px, 7vw, 86px) 0;
   background: #111318;
@@ -1015,43 +1073,6 @@ address a:hover {
   min-height: 100vh;
   background: #f8f9f7;
   color: #111318;
-}
-
-.legal-header {
-  display: flex;
-  flex-wrap: wrap;
-  min-height: 66px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 10px clamp(18px, 3vw, 42px);
-  border-bottom: 1px solid var(--line);
-  background: rgba(248, 249, 247, 0.92);
-  backdrop-filter: blur(18px);
-}
-
-.legal-header nav {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-}
-
-.legal-header nav a {
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 9px 13px;
-  background: #ffffff;
-  color: #2c323b;
-  font-size: 0.86rem;
-  font-weight: 850;
-  white-space: nowrap;
-}
-
-.legal-header nav a:hover {
-  border-color: #111318;
-  background: #111318;
-  color: #ffffff;
 }
 
 .legal-hero {
@@ -1150,15 +1171,8 @@ address a:hover {
 }
 
 @media (max-width: 980px) {
-  .site-header {
-    grid-template-columns: 1fr auto;
-  }
-
-  .site-header nav {
-    order: 3;
-    grid-column: 1 / -1;
-    justify-content: flex-start;
-    overflow-x: auto;
+  :root {
+    --site-nav-height: 66px;
   }
 
   .hero-visual {
@@ -1189,8 +1203,53 @@ address a:hover {
     grid-template-columns: 1fr;
   }
 
+  .store-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .store-downloads {
+    width: min(100%, 328px);
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .store-downloads .store-button {
+    flex: 0 1 calc((100% - 12px) / 2);
+    min-width: 0;
+    max-width: 158px;
+    gap: 7px;
+    padding-inline: 8px;
+  }
+
+  .store-downloads .store-button-text {
+    min-width: 0;
+  }
+
+  .store-downloads .store-button-text strong {
+    max-width: none;
+    font-size: 0.95rem;
+  }
+
+  .store-privacy {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .privacy-badge {
+    width: auto;
+    height: 44px;
+  }
+
   .media-column {
     justify-content: flex-start;
+  }
+
+  .app-section-myxer .media-column,
+  .app-detail-hero-myxer .media-column {
+    justify-content: center;
   }
 
   .video-frame {
@@ -1201,34 +1260,6 @@ address a:hover {
 @media (max-width: 720px) {
   .section-inner {
     width: min(calc(100% - 28px), 1180px);
-  }
-
-  .site-header {
-    min-height: 66px;
-    padding: 10px 14px;
-  }
-
-  .brand-mark strong {
-    max-width: 150px;
-    font-size: 0.84rem;
-    line-height: 1.1;
-  }
-
-  .header-phone {
-    width: 44px;
-    gap: 0;
-    padding: 0;
-    justify-content: center;
-    overflow: hidden;
-    color: #111318;
-    font-size: 0;
-    white-space: nowrap;
-  }
-
-  .header-phone svg {
-    flex: 0 0 auto;
-    display: block;
-    stroke: currentColor;
   }
 
   .hero {
@@ -1270,9 +1301,12 @@ address a:hover {
   }
 
   .app-title-row h2,
-  .app-detail-title h1,
   .contact-footer h2 {
     font-size: clamp(2.05rem, 11vw, 3.3rem);
+  }
+
+  .app-detail-title h1 {
+    font-size: clamp(1.9rem, 8vw, 2.65rem);
   }
 
   .app-title-logo {
@@ -1301,10 +1335,6 @@ address a:hover {
   .app-status {
     width: 100%;
     font-size: 0.88rem;
-  }
-
-  .store-button {
-    flex: 0 0 158px;
   }
 
   .screenshot-rail {

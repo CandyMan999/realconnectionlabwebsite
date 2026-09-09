@@ -9,10 +9,10 @@ import {
   PlayCircle,
 } from "lucide-react";
 import AppLogo from "../components/AppLogo";
-import BrandLogo from "../components/BrandLogo";
+import AppPromoMedia from "../components/AppPromoMedia";
 import PreviewVideo from "../components/PreviewVideo";
 import ScreenshotCarousel from "../components/ScreenshotCarousel";
-import StoreButton from "../components/StoreButton";
+import StoreLinks from "../components/StoreLinks";
 import { apps, company } from "../data/apps";
 import { buildAppPageJsonLd, getAppById, jsonLdScript } from "../lib/seo";
 
@@ -62,6 +62,10 @@ export async function generateMetadata({ params }) {
 }
 
 function AppPreview({ app }) {
+  if (app.promoImages) {
+    return <AppPromoMedia app={app} priority />;
+  }
+
   if (app.video && app.posterPlayOverlay) {
     return <PreviewVideo app={app} />;
   }
@@ -120,27 +124,6 @@ export default async function AppDetailPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScript(appPageJsonLd)}
       />
-      <header className="site-header" aria-label="Primary navigation">
-        <a className="brand-mark" href="/" aria-label="Real Connection Lab home">
-          <BrandLogo />
-          <strong>{company.name}</strong>
-        </a>
-        <nav>
-          <a href="/">Home</a>
-          {apps
-            .filter((item) => item.id !== app.id)
-            .map((item) => (
-              <a href={item.path} key={item.id}>
-                {item.name}
-              </a>
-            ))}
-        </nav>
-        <a className="header-phone" href={company.phoneHref}>
-          <Phone size={17} aria-hidden="true" />
-          {company.phone}
-        </a>
-      </header>
-
       <section
         className={`app-detail-hero app-detail-hero-${app.theme}`}
         style={{
@@ -148,7 +131,7 @@ export default async function AppDetailPage({ params }) {
           "--accent-alt": app.accentAlt,
         }}
       >
-        <div className="section-inner app-detail-layout">
+        <div className={`section-inner app-detail-layout${app.promoImages ? " app-layout-with-promo" : ""}`}>
           <div className="app-detail-copy">
             <a className="back-link" href="/">
               <ArrowLeft size={18} aria-hidden="true" />
@@ -163,7 +146,7 @@ export default async function AppDetailPage({ params }) {
               />
               <div>
                 <p>{app.eyebrow}</p>
-                <h1>{app.name}</h1>
+                <h1>{app.displayName ?? app.name}</h1>
               </div>
             </div>
             <p className="app-status">{app.status}</p>
@@ -176,11 +159,7 @@ export default async function AppDetailPage({ params }) {
               ))}
             </ul>
 
-            <div className="store-row" aria-label={`${app.name} download links`}>
-              {app.links.map((link) => (
-                <StoreButton link={link} key={link.label} />
-              ))}
-            </div>
+            <StoreLinks app={app} />
 
             {app.website ? (
               <a

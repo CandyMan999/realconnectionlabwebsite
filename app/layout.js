@@ -1,4 +1,5 @@
 import "./globals.css";
+import SiteNavbar from "./components/SiteNavbar";
 import { apps, company } from "./data/apps";
 
 const siteDescription =
@@ -70,7 +71,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <SiteNavbar />
+        {children}
+      </body>
     </html>
   );
 }

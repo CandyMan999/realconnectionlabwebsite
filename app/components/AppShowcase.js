@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import AppLogo from "./AppLogo";
+import AppPromoMedia from "./AppPromoMedia";
 import PreviewVideo from "./PreviewVideo";
 import ScreenshotCarousel from "./ScreenshotCarousel";
-import StoreButton from "./StoreButton";
+import StoreLinks from "./StoreLinks";
 
 export default function AppShowcase({ app, index }) {
   return (
@@ -15,7 +16,7 @@ export default function AppShowcase({ app, index }) {
         "--accent-alt": app.accentAlt
       }}
     >
-      <div className="section-inner app-layout">
+      <div className={`section-inner app-layout${app.promoImages ? " app-layout-with-promo" : ""}`}>
         <div className="app-copy">
           <div className="app-title-row">
             <AppLogo
@@ -39,11 +40,7 @@ export default function AppShowcase({ app, index }) {
             ))}
           </ul>
 
-          <div className="store-row" aria-label={`${app.name} download links`}>
-            {app.links.map((link) => (
-              <StoreButton link={link} key={link.label} />
-            ))}
-          </div>
+          <StoreLinks app={app} />
           <a className="detail-link" href={app.path}>
             Learn more about {app.name}
             <ArrowRight size={18} aria-hidden="true" />
@@ -51,7 +48,9 @@ export default function AppShowcase({ app, index }) {
         </div>
 
         <div className="media-column">
-          {app.video && app.posterPlayOverlay ? (
+          {app.promoImages ? (
+            <AppPromoMedia app={app} priority={index === 0} />
+          ) : app.video && app.posterPlayOverlay ? (
             <PreviewVideo app={app} />
           ) : app.video ? (
             <div className="video-frame">
