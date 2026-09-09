@@ -107,20 +107,20 @@ export const apps = [
     ],
   },
   {
-    id: "sober-motivation",
-    path: "/sober-motivation",
-    name: "Sober Motivation",
-    storeName: "Sober Motivation Quit Drinking",
+    id: "rise-again",
+    path: "/rise-again",
+    name: "Rise Again: Quit Drinking",
+    storeName: "Rise Again: Quit Drinking",
     eyebrow: "Recovery support app",
     status: "Available on iOS and Android",
     headline:
       "Quit drinking with sober tracking, accountability, and timely support.",
     description:
-      "Sober Motivation is a privacy-first quit drinking and sobriety tracker for adults who want accountability in real life: sober day counting, daily check-ins, journal prompts, relapse insights, bar and liquor store alerts, sober buddies, recovery chatrooms, and live video calls.",
+      "Rise Again: Quit Drinking is a privacy-first quit drinking and sobriety tracker for adults who want accountability in real life: sober day counting, daily check-ins, journal prompts, relapse insights, bar and liquor store alerts, sober buddies, recovery chatrooms, and live video calls.",
     longDescription:
-      "Sober Motivation goes beyond a simple sober day counter by helping people notice triggers, check in daily, journal honestly, celebrate milestones, and reach trusted support before high-risk moments become setbacks. Optional bar and liquor store alerts, sober buddy alerts, video calls, chatrooms, and privacy protections make the app useful when support matters most.",
+      "Rise Again: Quit Drinking goes beyond a simple sober day counter by helping people notice triggers, check in daily, journal honestly, celebrate milestones, and reach trusted support before high-risk moments become setbacks. Optional bar and liquor store alerts, sober buddy alerts, video calls, chatrooms, and privacy protections make the app useful when support matters most.",
     disclaimer:
-      "Sober Motivation is not a medical device, emergency service, or replacement for professional treatment. If you are experiencing a medical emergency or severe withdrawal symptoms, call emergency services or seek professional medical care.",
+      "Rise Again: Quit Drinking is not a medical device, emergency service, or replacement for professional treatment. If you are experiencing a medical emergency or severe withdrawal symptoms, call emergency services or seek professional medical care.",
     logo: "/assets/soberMotivation/soberMotivationLogo.png",
     poster: "/assets/soberMotivation/screenShot1.png",
     video: "/assets/soberMotivation/SoberMotivationPreview.mp4",
@@ -151,11 +151,11 @@ export const apps = [
       },
     ],
     seo: {
-      title: "Sober Motivation Quit Drinking App and Sobriety Tracker",
+      title: "Rise Again: Quit Drinking App and Sobriety Tracker",
       description:
-        "Sober Motivation helps adults quit drinking with a sober day counter, bar and liquor store alerts, sober buddies, daily check-ins, journaling, chatrooms, and live video calls.",
+        "Rise Again: Quit Drinking helps adults quit drinking with a sober day counter, bar and liquor store alerts, sober buddies, daily check-ins, journaling, chatrooms, and live video calls.",
       keywords: [
-        "Sober Motivation",
+        "Rise Again: Quit Drinking",
         "quit drinking app",
         "sobriety tracker",
         "sober day counter",
@@ -167,10 +167,15 @@ export const apps = [
       ],
     },
     ogImage: "/assets/soberMotivation/screenShot1.png",
-    lastModified: "2026-09-03",
+    lastModified: "2026-09-09",
     sitemapPriority: 0.9,
     sitemapChangeFrequency: "weekly",
     links: [
+      {
+        label: "Privacy Policy",
+        href: "https://realconnectionlabllc.com/rise-again/privacy",
+        kind: "privacy",
+      },
       {
         label: "App Store",
         href: "https://apps.apple.com/us/app/sober-motivation-quit-drinking/id6756150473",

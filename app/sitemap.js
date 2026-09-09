@@ -2,8 +2,14 @@ import { apps, company } from "./data/apps";
 
 const staticRoutes = [
   {
+    path: "/rise-again/privacy",
+    lastModified: "2026-09-09",
+    changeFrequency: "yearly",
+    priority: 0.45,
+  },
+  {
     path: "/",
-    lastModified: "2026-09-03",
+    lastModified: "2026-09-09",
     changeFrequency: "weekly",
     priority: 1,
   },

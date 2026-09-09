@@ -2,7 +2,7 @@ import "./globals.css";
 import { apps, company } from "./data/apps";
 
 const siteDescription =
-  "Explore FanLine, Sober Motivation, and Myxer from Real Connection Lab LLC: mobile apps for creator calls, sobriety support, and live video speed dating.";
+  "Explore FanLine, Rise Again: Quit Drinking, and Myxer from Real Connection Lab LLC: mobile apps for creator calls, sobriety support, and live video speed dating.";
 
 export const metadata = {
   metadataBase: new URL(company.url),
@@ -16,7 +16,7 @@ export const metadata = {
     "Real Connection Lab LLC",
     "Real Connection Lab",
     "FanLine",
-    "Sober Motivation",
+    "Rise Again: Quit Drinking",
     "Myxer",
     "creator calls",
     "quit drinking app",
@@ -44,7 +44,7 @@ export const metadata = {
     images: [
       {
         url: apps[1].ogImage,
-        alt: "Sober Motivation app screen from Real Connection Lab LLC",
+        alt: "Rise Again: Quit Drinking app screen from Real Connection Lab LLC",
       },
     ],
   },
