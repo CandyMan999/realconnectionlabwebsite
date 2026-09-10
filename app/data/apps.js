@@ -16,15 +16,15 @@ export const apps = [
   {
     id: "fanline",
     path: "/fanline",
-    name: "FanLine",
-    storeName: "FanLine",
-    eyebrow: "Creator calls and paid messages",
-    status: "iOS beta open - Android link available - App Store approval pending",
-    headline: "Video call, message, or book creators and experts.",
+    name: "FanLine: Influencer Access",
+    storeName: "FanLine: Influencer Access",
+    eyebrow: "Direct access to influencers and creators",
+    status: "Now live on iOS - Also available on Android",
+    headline: "Connect one-on-one with the people you follow.",
     description:
-      "FanLine helps fans, clients, and followers reach creators directly through paid video calls, private messages, scheduled bookings, creator profiles, secure payments, and transparent access controls.",
+      "FanLine: Influencer Access brings you closer to influencers, creators, and experts through private video calls, direct messages, and scheduled bookings. Ask questions, get advice, or pitch a collaboration with clear pricing before you connect.",
     longDescription:
-      "Built for influencers, coaches, experts, and creator-led businesses, FanLine gives people a direct way to request a live call, send a paid message, or book a conversation for later. Creators can show availability, set rates, manage profiles, and earn from high-intent conversations without losing control of their time.",
+      "Find creators who are available now or book a private conversation for later. Explore profiles and intro videos, send a message, or reach out about a brand deal, podcast appearance, or business opportunity. Creators set their own call and message rates, manage availability, and choose the opportunities they welcome. Paid calls are charged only when they connect; paid messages are charged when you choose to unlock the creator's response.",
     disclaimer:
       "FanLine creators are independent users. Information shared through FanLine is not a substitute for medical, legal, financial, or other professional advice.",
     logo: "/assets/fanline/fanlineLogo.png",
@@ -58,11 +58,12 @@ export const apps = [
       },
     ],
     seo: {
-      title: "FanLine Creator Calls, Paid Messages and Bookings",
+      title: "FanLine: Influencer Access | Video Calls & Messages",
       description:
-        "FanLine by Real Connection Lab lets fans video call, message, or book creators, coaches, experts, and influencers with secure payments and clear creator profiles.",
+        "Get FanLine: Influencer Access on iOS. Video call influencers, message creators, book expert conversations, and pitch collaborations with clear pricing.",
       keywords: [
-        "FanLine",
+        "FanLine: Influencer Access",
+        "influencer access",
         "creator calls",
         "paid video calls",
         "paid messages",
@@ -73,20 +74,14 @@ export const apps = [
       ],
     },
     ogImage: "/assets/fanline/appStoreFront/app1.png",
-    lastModified: "2026-09-03",
+    lastModified: "2026-09-10",
     sitemapPriority: 0.82,
     sitemapChangeFrequency: "weekly",
     links: [
       {
-        label: "Join TestFlight",
-        href: "https://testflight.apple.com/join/cQMDj8Qy",
-        kind: "testflight",
-      },
-      {
-        label: "App Store pending",
-        href: null,
+        label: "App Store",
+        href: "https://apps.apple.com/us/app/fanline-influencer-access/id6786069742",
         kind: "appstore",
-        disabled: true,
       },
       {
         label: "Google Play",
