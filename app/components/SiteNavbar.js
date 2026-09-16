@@ -16,7 +16,7 @@ const navItems = [
   ...apps.map((app) => ({ href: app.path, label: app.displayName ?? app.name })),
   { href: "/#contact", label: "Contact" },
 ];
-const mobileQuery = "(max-width: 980px)";
+const mobileQuery = "(max-width: 1180px)";
 
 export default function SiteNavbar() {
   const pathname = usePathname();

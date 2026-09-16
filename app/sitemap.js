@@ -1,6 +1,7 @@
 import { apps, company } from "./data/apps";
 
 const staticRoutes = [
+  { path: "/cinecue/privacy", lastModified: "2026-09-16", changeFrequency: "yearly", priority: 0.45 },
   {
     path: "/rise-again/privacy",
     lastModified: "2026-09-09",

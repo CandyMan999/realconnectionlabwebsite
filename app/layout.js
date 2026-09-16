@@ -3,7 +3,7 @@ import SiteNavbar from "./components/SiteNavbar";
 import { apps, company } from "./data/apps";
 
 const siteDescription =
-  "Explore FanLine: Influencer Access, Rise Again: Quit Drinking, and Myxer from Real Connection Lab LLC: apps for creator calls, sobriety support, and video speed dating.";
+  "Explore FanLine: Influencer Access, Rise Again: Quit Drinking, Myxer, and CineCue from Real Connection Lab LLC: apps for creator calls, sobriety support, video dating, and free teleprompter recording.";
 
 export const metadata = {
   metadataBase: new URL(company.url),

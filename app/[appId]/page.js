@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CineCuePage from "../components/CineCuePage";
 import { notFound } from "next/navigation";
 import {
   ArrowLeft,
@@ -115,6 +116,8 @@ export default async function AppDetailPage({ params }) {
   if (!app) {
     notFound();
   }
+
+  if (app.id === "cinecue") return <CineCuePage app={app} />;
 
   const appPageJsonLd = buildAppPageJsonLd(app);
 

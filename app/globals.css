@@ -1377,3 +1377,20 @@ address a:hover {
     scroll-behavior: auto !important;
   }
 }
+
+/* CineCue's portfolio panel follows its black and turquoise product palette. */
+.app-section-cinecue { background: #080c0e; color: #f4f8f8; }
+.app-section-cinecue .app-description,
+.app-section-cinecue .app-title-row p,
+.app-section-cinecue .feature-list { color: #b8cccc; }
+.app-section-cinecue .app-status,
+.app-section-cinecue .detail-link { color: #00e3dc; }
+.app-section-cinecue .privacy-badge { color: #b8cccc; border-color: #375050; }
+@media (max-width: 760px) {
+  .app-section-cinecue .app-copy { text-align: center; }
+  .app-section-cinecue .app-title-row,
+  .app-section-cinecue .store-downloads,
+  .app-section-cinecue .store-privacy { justify-content: center; }
+  .app-section-cinecue .store-links { align-items: center; }
+  .app-section-cinecue .feature-list { text-align: left; }
+}

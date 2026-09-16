@@ -53,8 +53,8 @@ export default function Home() {
             <span>Lab LLC</span>
           </h1>
           <p className="hero-copy">
-            We build social, recovery, and dating apps that bring people into live,
-            human moments: a fan call, a sober check-in, or a video-first date.
+            We build social, recovery, dating, and creator apps for real human
+            moments: a fan call, a sober check-in, a video date, or your next great take.
           </p>
           <div className="hero-actions">
             <a className="primary-action" href={company.phoneHref}>
