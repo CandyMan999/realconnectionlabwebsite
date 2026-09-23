@@ -369,6 +369,11 @@ export const apps = [
         kind: "privacy",
       },
       {
+        label: "Delete Account & Data",
+        href: "/myxer/privacy#data-deletion",
+        kind: "privacy",
+      },
+      {
         label: "Google Play coming soon",
         href: null,
         kind: "googleplay",
@@ -406,20 +411,20 @@ export const apps = [
     headline: "Your words. Your pace. No watermarks.",
     description: "Read naturally and record with confidence. Voice Sync follows your speech. Watch an ad before downloading each video, or connect an eligible verified FanLine creator account to skip the ads. No separate CineCue account required.",
     longDescription: "A free teleprompter and video recorder for creators. Record your next tutorial, presentation, or story with no watermarks.",
-    logo: "/assets/cineQue/logo.png", poster: "/assets/cineQue/appStoreFront/app1.png",
+    logo: "/assets/cineQue/logo.png", poster: "/assets/cineQue/appStoreFront/store1.png",
     video: "/assets/cineQue/CineQuePreview.mp4", posterPlayOverlay: true,
     accent: "#00e3dc", accentAlt: "#00a7b0", theme: "cinecue",
     schemaCategory: "MultimediaApplication", platforms: ["iOS"],
     highlights: ["Voice Sync follows your words and pauses with you", "High Res recording up to 60 fps, depending on your setup", "Cinematic depth on supported devices", "Custom backgrounds, camera switching, and takes up to 30 minutes"],
     detailSections: [],
     seo: { title: "CineCue | Free iPhone Teleprompter & Video Recorder", description: "Record for free with no watermarks. CineCue brings Voice Sync, High Res recording, cinematic effects, and custom backgrounds to your iPhone. Powered by FanLine.", keywords: ["CineCue", "free teleprompter", "iPhone video recorder", "Voice Sync", "no watermarks"] },
-    ogImage: "/assets/cineQue/appStoreFront/app1.png", lastModified: "2026-09-16", sitemapPriority: 0.85, sitemapChangeFrequency: "monthly",
+    ogImage: "/assets/cineQue/appStoreFront/store1.png", lastModified: "2026-09-23", sitemapPriority: 0.85, sitemapChangeFrequency: "monthly",
     links: [
       { label: "App Store", href: null, kind: "appstore", disabled: true },
       { label: "Privacy Policy", href: "/cinecue/privacy", kind: "privacy" }
     ],
     screenshotPreview: true,
-    screenshots: Array.from({ length: 7 }, (_, i) => `/assets/cineQue/appStoreFront/app${i + 1}.png`),
-    screenshotDimensions: Array.from({ length: 7 }, (_, i) => i === 2 ? { width: 800, height: 369 } : { width: 369, height: 800 }),
+    screenshots: [1, 2, 3, 4, 5, 6, 7, 10].map((number) => `/assets/cineQue/appStoreFront/store${number}.png`),
+    screenshotDimensions: Array.from({ length: 8 }, () => ({ width: 1320, height: 2868 })),
   },
 ];

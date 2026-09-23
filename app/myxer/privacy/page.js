@@ -29,7 +29,7 @@ export default function MyxerPrivacyPolicy() {
           </p>
           <h1>Privacy Policy</h1>
           <p>
-            Last updated: August 25, 2026
+            Last updated: September 23, 2026
           </p>
         </div>
       </section>
@@ -42,6 +42,8 @@ export default function MyxerPrivacyPolicy() {
             speed dating app, related websites, support channels, and other
             services that link to this policy.
           </p>
+
+          <p><a href="#data-deletion">Delete your Myxer account and data →</a></p>
 
           <h2>Who We Are</h2>
           <p>
@@ -122,6 +124,30 @@ export default function MyxerPrivacyPolicy() {
             limited information when required for legal, safety, fraud
             prevention, accounting, dispute resolution, or security purposes.
           </p>
+
+          <section id="data-deletion" className="data-deletion-section" aria-labelledby="delete-account">
+            <h2 id="delete-account">Myxer Account &amp; Data Deletion</h2>
+            <p>To permanently delete your Myxer account and its associated data, follow these steps:</p>
+            <ol>
+              <li>Open Myxer and sign in to your account.</li>
+              <li>Go to <strong>Edit Profile</strong>.</li>
+              <li>Scroll to the bottom of the screen and tap <strong>Delete Account</strong>.</li>
+            </ol>
+            <h3>What happens to your data?</h3>
+            <p>
+              Deleting your account permanently deletes your account and associated
+              data from our systems. Limited information may be retained when required
+              for legal, safety, fraud prevention, accounting, dispute resolution,
+              or security purposes.
+            </p>
+            <h3>Need help or cannot access your account?</h3>
+            <p>
+              Request account or personal data deletion by emailing{" "}
+              <a href={company.emailHref}>{company.email}</a>. Let us know your request
+              is for Myxer. Do not send your password.
+            </p>
+            <p><a href="#data-deletion">Direct link to these data deletion instructions</a></p>
+          </section>
 
           <h2>Data Retention</h2>
           <p>

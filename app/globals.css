@@ -1262,11 +1262,6 @@ address a:hover {
   }
 
   .media-column {
-    justify-content: flex-start;
-  }
-
-  .app-section-myxer .media-column,
-  .app-detail-hero-myxer .media-column {
     justify-content: center;
   }
 
@@ -1393,4 +1388,26 @@ address a:hover {
   .app-section-cinecue .store-privacy { justify-content: center; }
   .app-section-cinecue .store-links { align-items: center; }
   .app-section-cinecue .feature-list { text-align: left; }
+}
+
+.data-deletion-section {
+  margin-block: 36px;
+  padding: clamp(20px, 4vw, 32px);
+  border: 2px solid #167b80;
+  border-radius: 18px;
+  background: #f0fafa;
+  scroll-margin-top: calc(var(--site-nav-height) + 20px);
+}
+
+.legal-copy .data-deletion-section h2 {
+  margin-top: 0;
+}
+
+.data-deletion-section ol {
+  padding-left: 24px;
+  line-height: 1.8;
+}
+
+.store-privacy {
+  flex-wrap: wrap;
 }

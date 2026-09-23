@@ -191,8 +191,10 @@
 @media (max-width: 640px) {
   .viewport {
     position: absolute;
-    top: calc(max(12px, env(safe-area-inset-top)) + 52px);
-    bottom: calc(max(8px, env(safe-area-inset-bottom)) + 60px);
+    /* Reserve equal space for controls so the image stays centered. */
+    --preview-inset: calc(max(12px, env(safe-area-inset-top), env(safe-area-inset-bottom)) + 60px);
+    top: var(--preview-inset);
+    bottom: var(--preview-inset);
     height: auto;
   }
 

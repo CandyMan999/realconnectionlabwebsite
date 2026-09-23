@@ -73,13 +73,13 @@ export default function StoreButton({ link }) {
     const content = (
       <>
         <ShieldCheck size={16} aria-hidden="true" />
-        <span>Privacy Policy</span>
+        <span>{link.label}</span>
       </>
     );
 
     if (link.disabled) {
       return (
-        <span className="privacy-badge" aria-disabled="true" title="Privacy Policy">
+        <span className="privacy-badge" aria-disabled="true" title={link.label}>
           {content}
         </span>
       );
@@ -91,7 +91,7 @@ export default function StoreButton({ link }) {
         href={link.href}
         target="_blank"
         rel="noreferrer"
-        title="Privacy Policy"
+        title={link.label}
         aria-label={`${link.label} opens in a new tab`}
       >
         {content}
