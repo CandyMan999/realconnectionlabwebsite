@@ -299,7 +299,7 @@ export const apps = [
     name: "Myxer",
     storeName: "Myxer: Video Speed Dating",
     eyebrow: "Live video speed dating",
-    status: "iOS live - Android coming soon",
+    status: "Available on iOS and Android",
     headline: "Video speed dating for real face-to-face chemistry.",
     description:
       "Myxer helps singles move past swipe fatigue with short live video dates, video-first messaging, interest chatrooms, travel mode, interactive map discovery, and safety tools designed to reduce bots, scams, and location exposure.",
@@ -316,7 +316,7 @@ export const apps = [
     accentAlt: "#d8aa4c",
     theme: "myxer",
     schemaCategory: "LifestyleApplication",
-    platforms: ["iOS"],
+    platforms: ["iOS", "Android"],
     highlights: [
       "Short live video speed dates that show chemistry quickly",
       "Video-first messaging for more authentic conversations",
@@ -354,7 +354,7 @@ export const apps = [
       ],
     },
     ogImage: "/assets/myxer/myxer1.png",
-    lastModified: "2026-09-03",
+    lastModified: "2026-10-09",
     sitemapPriority: 0.88,
     sitemapChangeFrequency: "weekly",
     links: [
@@ -374,10 +374,9 @@ export const apps = [
         kind: "privacy",
       },
       {
-        label: "Google Play coming soon",
-        href: null,
+        label: "Google Play",
+        href: "https://play.google.com/store/apps/details?id=com.jalewis1221.myxer",
         kind: "googleplay",
-        disabled: true,
       },
     ],
     screenshotPreview: true,
