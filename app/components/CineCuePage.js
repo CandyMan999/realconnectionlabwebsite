@@ -7,7 +7,7 @@ import { buildAppPageJsonLd, jsonLdScript } from "../lib/seo";
 import styles from "./CineCuePage.module.css";
 
 const features = [
-  [AudioLines, "A script that listens.", "Voice Sync follows your speech, pauses when you pause, and picks back up when you return after going off script. Offline use is supported when on-device speech recognition is available."],
+  [AudioLines, "A script that listens. Even in floating mode.", "Voice Sync works in floating mode too: it follows your speech, pauses when you pause, and picks back up when you return after going off script. Offline use is supported when on-device speech recognition is available."],
   [Camera, "Every detail. Every take.", "High Res recording with frame rates up to 60 fps. Available resolution and frame rate depend on your iPhone, camera, and selected recording mode."],
   [Focus, "Bring yourself into focus.", "Cinematic depth and background focus effects give your videos a considered look on supported devices. Cinematic capabilities vary separately from High Res recording."],
   [ImagePlus, "Make the scene yours.", "Keep your original camera background, dial in adjustable blur, or choose a custom background image."],
@@ -28,7 +28,7 @@ export default function CineCuePage({ app }) {
         <p className={styles.eyebrow}>FREE IPHONE TELEPROMPTER + VIDEO RECORDER</p>
         <h1>CineCue:<br /><em>Teleprompter</em></h1>
         <p className={styles.subtitle}>Cinematic Video &amp; Voice Sync</p>
-        <p className={styles.intro}>Look up. Speak naturally. Make your next great take with a teleprompter that keeps up with you.</p>
+        <p className={styles.intro}>Look up. Speak naturally. Voice Sync keeps your script moving with your speech—even in floating mode. Now available on the App Store.</p>
         <StoreLinks app={app} />
         <p className={styles.note}>FREE app. No watermarks. Watch an ad before downloading each video, or connect an eligible verified FanLine creator account to skip the ads. No separate CineCue account required.</p>
         <a className={styles.textLink} href="#preview">Watch CineCue in action <ArrowUpRight size={17} aria-hidden="true" /></a>
