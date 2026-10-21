@@ -188,7 +188,7 @@ export default async function AppDetailPage({ params }) {
       <section className="app-detail-content" aria-labelledby={`${app.id}-features`}>
         <div className="section-inner">
           <p className="section-label">{app.name} features</p>
-          <h2 id={`${app.id}-features`}>Built for real moments</h2>
+          <h2 id={`${app.id}-features`}>{app.featuresHeading ?? "Built for real moments"}</h2>
           <div className="app-detail-grid">
             {app.detailSections.map((section) => (
               <article className="app-detail-card" key={section.title}>

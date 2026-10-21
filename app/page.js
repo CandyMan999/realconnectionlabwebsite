@@ -18,7 +18,7 @@ export default function Home() {
         <div className="hero-visual" aria-hidden="true">
           <Image
             className="hero-shot hero-shot-one"
-            src="/assets/fanline/appStoreFront/app1.png"
+            src="/assets/fanline/newStoreFront/app1.png"
             alt=""
             width={310}
             height={674}
@@ -54,7 +54,7 @@ export default function Home() {
           </h1>
           <p className="hero-copy">
             We build social, recovery, dating, and creator apps for real human
-            moments: a fan call, a sober check-in, a video date, or your next great take.
+            moments: a paid creator call, a sober check-in, a video date, or your next great take.
           </p>
           <div className="hero-actions">
             <a className="primary-action" href={company.phoneHref}>

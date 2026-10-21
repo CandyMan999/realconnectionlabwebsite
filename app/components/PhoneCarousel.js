@@ -8,7 +8,7 @@ import ContentPreviewSlider from "./ContentPreviewSlider";
 import usePrefersReducedMotion from "./usePrefersReducedMotion";
 import styles from "./PhoneCarousel.module.css";
 
-// The same six positions and spring animation as the FanLine homepage.
+// Keep the front and side positions consistent as the number of promos changes.
 const stackSlots = [
   { x: 0, y: 0, scale: 1, rotate: 0, opacity: 1, zIndex: 60 },
   { x: 150, y: 28, scale: 0.86, rotate: 8, opacity: 0.86, zIndex: 48 },
@@ -17,6 +17,20 @@ const stackSlots = [
   { x: -286, y: 62, scale: 0.72, rotate: -14, opacity: 0.56, zIndex: 30 },
   { x: -150, y: 28, scale: 0.86, rotate: -8, opacity: 0.86, zIndex: 48 },
 ];
+
+function getStackSlot(index, imageCount) {
+  if (index < 3) return stackSlots[index];
+  if (index >= imageCount - 2) {
+    return stackSlots[index - imageCount + stackSlots.length];
+  }
+
+  const rearCount = imageCount - 5;
+  const rearIndex = index - 3;
+  return {
+    ...stackSlots[3],
+    x: rearCount > 1 ? 48 * (1 - (2 * rearIndex) / (rearCount - 1)) : 0,
+  };
+}
 
 export default function PhoneCarousel({ app, priority = false }) {
   const images = app.promoImages;
@@ -86,7 +100,7 @@ export default function PhoneCarousel({ app, priority = false }) {
       >
         {images.map((image, imageIndex) => {
           const slotIndex = wrapIndex(imageIndex - activeIndex);
-          const slot = stackSlots[slotIndex];
+          const slot = getStackSlot(slotIndex, images.length);
           return (
             <motion.button
               type="button"
