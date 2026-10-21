@@ -7,6 +7,38 @@
   container-type: inline-size;
 }
 
+.languages {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.languages button {
+  min-height: 44px;
+  padding: 8px 18px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.languages button[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #111318;
+}
+
+.languages button:focus-visible {
+  outline: 3px solid var(--accent-alt);
+  outline-offset: 3px;
+}
+
 .stage {
   --phone-width: clamp(142px, 39cqw, 230px);
   --phone-height: calc(var(--phone-width) * 1.87);

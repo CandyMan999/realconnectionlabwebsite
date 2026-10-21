@@ -33,7 +33,28 @@ function getStackSlot(index, imageCount) {
 }
 
 export default function PhoneCarousel({ app, priority = false }) {
-  const images = app.promoImages;
+  const [language, setLanguage] = useState("en");
+  const images = language === "es" ? app.promoImagesSpanish : app.promoImages;
+
+  return (
+    <div>
+      {app.promoImagesSpanish?.length > 0 && (
+        <div className={styles.languages} role="group" aria-label="Promo language / Idioma">
+          <button type="button" lang="en" aria-pressed={language === "en"} onClick={() => setLanguage("en")}>
+            English
+          </button>
+          <button type="button" lang="es" aria-pressed={language === "es"} onClick={() => setLanguage("es")}>
+            Español
+          </button>
+        </div>
+      )}
+      <PromoCarousel key={`${app.id}-${language}`} app={app} images={images} language={language} priority={priority} />
+    </div>
+  );
+}
+
+function PromoCarousel({ app, images, language, priority }) {
+  const isSpanish = language === "es";
   const [activeIndex, setActiveIndex] = useState(0);
   const [previewIndex, setPreviewIndex] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -85,8 +106,9 @@ export default function PhoneCarousel({ app, priority = false }) {
   return (
     <section
       className={styles.carousel}
-      aria-label={`${app.name} promo carousel`}
-      aria-roledescription="carousel"
+      lang={language}
+      aria-label={isSpanish ? `Carrusel promocional de ${app.name}` : `${app.name} promo carousel`}
+      aria-roledescription={isSpanish ? "carrusel" : "carousel"}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onFocus={() => setHasFocus(true)}
@@ -122,7 +144,7 @@ export default function PhoneCarousel({ app, priority = false }) {
                 setActiveIndex(imageIndex);
                 setPreviewIndex(imageIndex);
               }}
-              aria-label={`Open ${image.alt}`}
+              aria-label={`${isSpanish ? "Abrir" : "Open"} ${image.alt}`}
               aria-current={slotIndex === 0 ? "true" : undefined}
               aria-haspopup="dialog"
             >
@@ -145,7 +167,7 @@ export default function PhoneCarousel({ app, priority = false }) {
           type="button"
           className={`${styles.arrow} ${styles.previous}`}
           onClick={() => setActiveIndex((index) => wrapIndex(index - 1))}
-          aria-label={`Show previous ${app.name} promo`}
+          aria-label={isSpanish ? `Ver promoción anterior de ${app.name}` : `Show previous ${app.name} promo`}
         >
           <ChevronLeft size={23} aria-hidden="true" />
         </button>
@@ -153,19 +175,19 @@ export default function PhoneCarousel({ app, priority = false }) {
           type="button"
           className={`${styles.arrow} ${styles.next}`}
           onClick={() => setActiveIndex((index) => wrapIndex(index + 1))}
-          aria-label={`Show next ${app.name} promo`}
+          aria-label={isSpanish ? `Ver siguiente promoción de ${app.name}` : `Show next ${app.name} promo`}
         >
           <ChevronRight size={23} aria-hidden="true" />
         </button>
       </div>
       <div className={styles.controls}>
-        <div className={styles.dots} aria-label={`Choose ${app.name} promo`}>
+        <div className={styles.dots} aria-label={isSpanish ? `Elegir promoción de ${app.name}` : `Choose ${app.name} promo`}>
           {images.map((image, index) => (
             <button
               type="button"
               key={image.src}
               onClick={() => setActiveIndex(index)}
-              aria-label={`Show ${app.name} promo ${index + 1}`}
+              aria-label={isSpanish ? `Ver promoción ${index + 1} de ${app.name}` : `Show ${app.name} promo ${index + 1}`}
               aria-pressed={index === activeIndex}
             >
               <span />
@@ -183,19 +205,20 @@ export default function PhoneCarousel({ app, priority = false }) {
               }
               setIsPlaying((playing) => !playing);
             }}
-            aria-label={`${isPlaying ? "Pause" : "Play"} ${app.name} carousel`}
+            aria-label={isSpanish ? `${isPlaying ? "Pausar" : "Reproducir"} carrusel de ${app.name}` : `${isPlaying ? "Pause" : "Play"} ${app.name} carousel`}
           >
             {isPlaying ? <Pause size={16} aria-hidden="true" /> : <Play size={16} aria-hidden="true" />}
           </button>
         )}
       </div>
-      <p className={styles.hint}>Tap a preview to explore</p>
+      <p className={styles.hint}>{isSpanish ? "Toca una imagen para explorar" : "Tap a preview to explore"}</p>
       <ContentPreviewSlider
         images={images}
         initialIndex={previewIndex ?? activeIndex}
         isOpen={previewIndex !== null}
         onClose={closePreview}
-        label={`${app.name} promo preview`}
+        language={language}
+        label={isSpanish ? `Vista previa de ${app.name}` : `${app.name} promo preview`}
       />
     </section>
   );

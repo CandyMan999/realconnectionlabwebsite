@@ -6,6 +6,7 @@ const nextConfig = {
       { pathname: "/**", search: "" },
       // Content versions refresh replaced promo artwork in the image cache.
       { pathname: "/assets/fanline/promoCarousel/*" },
+      { pathname: "/assets/fanline/promoSpanish/*" },
     ],
   },
   async redirects() {

@@ -93,6 +93,50 @@ export const apps = [
     screenshotPreview: true,
     screenshots: Array.from({ length: 10 }, (_, index) => `/assets/fanline/newStoreFront/app${index + 1}.png`),
     screenshotDimensions: Array.from({ length: 10 }, () => ({ width: 1320, height: 2868 })),
+    promoImagesSpanish: [
+      {
+        src: "/assets/fanline/promoSpanish/promo1.png?v=6fb9527c1f",
+        alt: "Crea tu perfil de creador en FanLine",
+        width: 1080,
+        height: 1620,
+      },
+      {
+        src: "/assets/fanline/promoSpanish/promo2.png?v=69486309c5",
+        alt: "Define tus tarifas y disponibilidad en FanLine",
+        width: 1080,
+        height: 1620,
+      },
+      {
+        src: "/assets/fanline/promoSpanish/promo3.png?v=ae7958d120",
+        alt: "Comparte tu enlace de FanLine",
+        width: 1080,
+        height: 1620,
+      },
+      {
+        src: "/assets/fanline/promoSpanish/promo4.png?v=b430a60fbf",
+        alt: "Dale a tu audiencia un enlace directo a tu FanLine",
+        width: 1080,
+        height: 1620,
+      },
+      {
+        src: "/assets/fanline/promoSpanish/promo5.png?v=82b6c845d3",
+        alt: "Conecta con tu audiencia mediante llamadas, reservas y respuestas",
+        width: 1080,
+        height: 1620,
+      },
+      {
+        src: "/assets/fanline/promoSpanish/promo6.png?v=194b19793f",
+        alt: "Gana dinero por tu tiempo con FanLine",
+        width: 1080,
+        height: 1620,
+      },
+      {
+        src: "/assets/fanline/promoSpanish/promo7.png?v=442b374619",
+        alt: "Invita a otros creadores a FanLine y gana por tus referidos",
+        width: 1254,
+        height: 1254,
+      },
+    ],
     promoImages: [
       {
         src: "/assets/fanline/promoCarousel/promo1.png?v=8af3752701",

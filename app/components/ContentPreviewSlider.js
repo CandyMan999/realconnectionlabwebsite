@@ -16,8 +16,10 @@ export default function ContentPreviewSlider({
   initialIndex = 0,
   isOpen,
   onClose,
-  label = "Screenshot preview"
+  label = "Screenshot preview",
+  language = "en"
 }) {
+  const isSpanish = language === "es";
   const [isMounted, setIsMounted] = useState(false);
   const [selection, setSelection] = useState({
     index: initialIndex,
@@ -152,6 +154,7 @@ export default function ContentPreviewSlider({
   return createPortal(
     <dialog
       ref={dialogRef}
+      lang={language}
       className={styles.dialog}
       aria-label={label}
       aria-modal="true"
@@ -182,7 +185,7 @@ export default function ContentPreviewSlider({
               className={`${styles.control} ${styles.close}`}
               type="button"
               onClick={onClose}
-              aria-label="Close preview"
+              aria-label={isSpanish ? "Cerrar vista previa" : "Close preview"}
             >
               <X size={24} aria-hidden="true" />
             </button>
@@ -192,7 +195,7 @@ export default function ContentPreviewSlider({
                 className={`${styles.control} ${styles.arrow} ${styles.previous}`}
                 type="button"
                 onClick={showPrevious}
-                aria-label="Show previous screenshot"
+                aria-label={isSpanish ? "Ver imagen anterior" : "Show previous screenshot"}
               >
                 <ChevronLeft size={28} aria-hidden="true" />
               </button>
@@ -252,18 +255,18 @@ export default function ContentPreviewSlider({
                   className={`${styles.control} ${styles.arrow} ${styles.next}`}
                   type="button"
                   onClick={showNext}
-                  aria-label="Show next screenshot"
+                  aria-label={isSpanish ? "Ver siguiente imagen" : "Show next screenshot"}
                 >
                   <ChevronRight size={28} aria-hidden="true" />
                 </button>
-                <div className={styles.dots} ref={dotsRef} aria-label="Choose screenshot">
+                <div className={styles.dots} ref={dotsRef} aria-label={isSpanish ? "Elegir imagen" : "Choose screenshot"}>
                   {images.map((image, index) => (
                     <button
                       key={`${image.alt}-${index}`}
                       className={index === currentIndex ? styles.activeDot : styles.dot}
                       type="button"
                       onClick={() => setSelection((current) => ({ ...current, index }))}
-                      aria-label={`Show screenshot ${index + 1}`}
+                      aria-label={isSpanish ? `Ver imagen ${index + 1}` : `Show screenshot ${index + 1}`}
                       aria-pressed={index === currentIndex}
                     />
                   ))}
@@ -272,7 +275,7 @@ export default function ContentPreviewSlider({
             )}
 
             <p className={styles.status} aria-live="polite" aria-atomic="true">
-              Screenshot {currentIndex + 1} of {imageCount}: {images[currentIndex]?.alt}
+              {isSpanish ? "Imagen" : "Screenshot"} {currentIndex + 1} {isSpanish ? "de" : "of"} {imageCount}: {images[currentIndex]?.alt}
             </p>
           </motion.div>
         )}
